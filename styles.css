@@ -88,6 +88,11 @@ input::placeholder{
     letter-spacing: 1px;
     font-family: "DM Sans", serif;
 }
+input[type="checkbox"]{
+    margin: 0;
+    height: 16px;
+    width: 16px;
+}
 button{
     padding: 1rem 0rem;
     font-size: 1rem;
@@ -117,4 +122,13 @@ button{
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+.password_extras_container{
+    display: flex;
+    justify-content: space-between;
+}
+.extra_remember{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
 }
