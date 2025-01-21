@@ -12,7 +12,6 @@ function CheckCover(coverScreen){
             } else if (event.key === "ArrowLeft") { // Left arrow key
                 coverScreen.setAttribute("data-covered", "login_covered");
             }
-            
         });
     } else {
         console.error("Element with class 'cover' not found.");
