@@ -4,15 +4,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function CheckCover(coverScreen){
+    let buttonCover = document.querySelectorAll(".swap_screens")
+
     if (coverScreen) {
-        // Listen for keydown events
-        document.addEventListener('keydown', function (event) {
-            if (event.key === "ArrowRight") { // Right arrow key
-                coverScreen.setAttribute("data-covered", "create_covered");
-            } else if (event.key === "ArrowLeft") { // Left arrow key
-                coverScreen.setAttribute("data-covered", "login_covered");
-            }
-        });
+        buttonCover.forEach(function(item){
+            item.addEventListener("click", function(){
+                let coverSide = item.getAttribute("data-side")
+                
+                if(coverSide == "login"){
+                    coverScreen.setAttribute("data-covered", "login_covered")
+                }
+                else if(coverSide == "account"){
+                    coverScreen.setAttribute("data-covered", "create_covered")
+                }
+            })
+        })
+        
     } else {
         console.error("Element with class 'cover' not found.");
     }
