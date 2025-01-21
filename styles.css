@@ -153,10 +153,12 @@ button.primary_button:active{
     background-color: var(--primary-500);
     z-index: 100;
     transform: translateX(100%);
+    animation-play-state: paused;
 }
 .cover[data-covered="login_covered"]{
     transform: translateX(0%);
     animation: cover_login 1000ms ease-out;
+    animation-play-state: running;
 }
 @keyframes cover_login {
     0%{
@@ -169,6 +171,7 @@ button.primary_button:active{
 .cover[data-covered="create_covered"]{
     transform: translateX(100%);
     animation: cover_create 1000ms ease-out;
+    animation-play-state: running;
 }
 @keyframes cover_create {
     0%{
