@@ -146,6 +146,19 @@ button.primary_button:active{
     background-color: var(--primary-700);
     box-shadow: 0px 0px 0px var(--neutral-400);
 }
+.cover{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    background-color: var(--primary-500);
+    z-index: 100;
+}
+.cover[data-covered="login_covered"]{
+    transform: translateX(0%);
+}
+.cover[data-covered="create_covered"]{
+    transform: translateX(100%);
+}
 .header_container{
     width: 100%;
     display: flex;
