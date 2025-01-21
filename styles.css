@@ -83,12 +83,19 @@ input{
     padding: 0rem 1rem;
     font-size: .75rem;
     font-weight: 500;
+    position: relative;
 }
 input::placeholder{
     font-weight: 400;
     color: var(--neutral-600);
     letter-spacing: 1px;
     font-family: "DM Sans", serif;
+}
+input:focus{
+    outline: 2px solid var(--neutral-400);
+}
+input:hover{
+    box-shadow: 0px 2px ;
 }
 input[type="checkbox"]{
     appearance: none; /* Reset native styles */
@@ -133,7 +140,7 @@ button.primary_button{
 }
 button.primary_button:hover{
     background-color: var(--primary-600);
-    box-shadow: 2px 2px 4px var(--neutral-400);
+    box-shadow: 0px 2px 4px var(--neutral-400);
 }
 button.primary_button:active{
     background-color: var(--primary-700);
