@@ -152,12 +152,31 @@ button.primary_button:active{
     position: absolute;
     background-color: var(--primary-500);
     z-index: 100;
+    transform: translateX(100%);
 }
 .cover[data-covered="login_covered"]{
     transform: translateX(0%);
+    animation: cover_login 1000ms ease-out;
+}
+@keyframes cover_login {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }
 .cover[data-covered="create_covered"]{
     transform: translateX(100%);
+    animation: cover_create 1000ms ease-out;
+}
+@keyframes cover_create {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
 }
 .header_container{
     width: 100%;
