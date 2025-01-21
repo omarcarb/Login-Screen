@@ -95,7 +95,7 @@ input:focus{
     outline: 2px solid var(--neutral-400);
 }
 input:hover{
-    box-shadow: 0px 2px ;
+    box-shadow: 0px 2px 4px var(--neutral-400);
 }
 input[type="checkbox"]{
     appearance: none; /* Reset native styles */
