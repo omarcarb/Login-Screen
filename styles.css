@@ -127,6 +127,17 @@ button{
 button.primary_button{
     background-color: var(--primary-500);
     color: var(--neutral-100);
+    box-shadow: 0px 0px 0px var(--neutral-400);
+    
+    transition: all 300ms ease-out;
+}
+button.primary_button:hover{
+    background-color: var(--primary-600);
+    box-shadow: 2px 2px 4px var(--neutral-400);
+}
+button.primary_button:active{
+    background-color: var(--primary-700);
+    box-shadow: 0px 0px 0px var(--neutral-400);
 }
 .header_container{
     width: 100%;
@@ -135,7 +146,7 @@ button.primary_button{
     justify-content: center;
     align-items: center;
     gap: .5rem;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
 }
 .form_container{
     display: flex;
@@ -189,16 +200,29 @@ button.primary_button{
 .swap_screens{
     text-decoration: underline;
     color: var(--primary-700);
+    cursor: pointer;
 }
 .password_validation_container{
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .75rem;
     background-color: var(--neutral-100);
     border-radius: .5rem;
     & .password_checklist_item{
         font-size: .85rem;
         color: var(--neutral-700);
+        position: relative;
+        left: 16px;
+    }
+    & .password_checklist_item::before{
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: var(--accent-500);
+        left: -16px;
+        top: 25%;
+        border-radius: 8px;
     }
 }
