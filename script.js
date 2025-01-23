@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const coverScreen = document.querySelector('.cover');
+    const passwordRequirements = document.querySelector(".password_validation_container")
+
     CheckCover(coverScreen);
 });
 
@@ -24,3 +26,5 @@ function CheckCover(coverScreen){
         console.error("Element with class 'cover' not found.");
     }
 }
+
+console.log(screen.width)
