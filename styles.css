@@ -245,7 +245,7 @@ button.primary_button:active{
 }
 .password_validation_container{
     padding: 1.5rem 1rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: .75rem;
     background-color: var(--neutral-100);
