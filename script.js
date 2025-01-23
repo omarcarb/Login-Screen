@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const coverScreen = document.querySelector('.cover');
     const passwordRequirements = document.querySelector(".password_validation_container")
+    const passwordInput = document.querySelector(".pword_input")
 
     CheckCover(coverScreen);
-    OpenPasswordContainer(passwordRequirements)
+    OpenPasswordContainer(passwordRequirements, passwordInput)
+    PasswordCheck(passwordInput);
 });
 
 function CheckCover(coverScreen){
@@ -28,8 +30,7 @@ function CheckCover(coverScreen){
     }
 }
 
-function OpenPasswordContainer(passwordRequirements){
-    let passwordInput = document.querySelector('.pword_input')
+function OpenPasswordContainer(passwordRequirements, passwordInput){
 
     passwordInput.addEventListener('focus', function(){
         passwordRequirements.style.display = "flex"
@@ -37,6 +38,10 @@ function OpenPasswordContainer(passwordRequirements){
     passwordInput.addEventListener('blur', function(){
         passwordRequirements.style.display = "none"
     })
+}
+
+function PasswordCheck(){
+
 }
 
 console.log(screen.width)
