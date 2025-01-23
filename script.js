@@ -40,8 +40,28 @@ function OpenPasswordContainer(passwordRequirements, passwordInput){
     })
 }
 
-function PasswordCheck(){
-    
+function PasswordCheck(passwordInput){
+    let characterSize = document.getElementById("password_character_size")
+    let numberCheck = document.getElementById("password_number_inclusion")
+
+    passwordInput.addEventListener('keyup', function(){
+        
+        if(passwordInput.value.length >= 8){
+            characterSize.setAttribute("data-status", "valid")
+        }
+        else if(passwordInput.value.length < 8){
+            characterSize.setAttribute("data-status","invalid")
+        }
+
+        let numbers = /[0-9]/g;
+
+        if(passwordInput.value.match(numbers)){
+            numberCheck.setAttribute("data-status","valid")
+        }
+        else{
+            numberCheck.setAttribute('data-status','invalid')
+        }
+    })
 }
 
 console.log(screen.width)

@@ -269,6 +269,9 @@ button.primary_button:active{
 .password_checklist_item[data-status = "invalid"]::before{
     background-color: var(--accent-500);
 }
+.password_checklist_item[data-status="valid"]::before{
+    background-color: rgb(13, 163, 13);
+}
 
 @media (min-width <=1200) and (max-width >= 1400) {
     
