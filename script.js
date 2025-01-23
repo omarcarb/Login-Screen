@@ -41,7 +41,7 @@ function OpenPasswordContainer(passwordRequirements, passwordInput){
 }
 
 function PasswordCheck(){
-
+    
 }
 
 console.log(screen.width)

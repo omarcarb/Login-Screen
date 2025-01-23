@@ -261,11 +261,13 @@ button.primary_button:active{
         position: absolute;
         width: 8px;
         height: 8px;
-        background-color: var(--accent-500);
         left: -16px;
         top: 25%;
         border-radius: 8px;
     }
+}
+.password_checklist_item[data-status = "invalid"]::before{
+    background-color: var(--accent-500);
 }
 
 @media (min-width <=1200) and (max-width >= 1400) {

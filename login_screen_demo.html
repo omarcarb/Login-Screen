@@ -68,12 +68,12 @@
                 </div>
                 <div class="form_input">
                     <label for="password">Password</label>
-                    <input name="password" class="pword_input" type="password" placeholder="Enter Your Password" required>
+                    <input name="password" class="pword_input" type="password" placeholder="Enter Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     <div class="password_validation_container" data-requierments="visible">
-                        <p class="password_checklist_item" id="password_character_size">Must have at least 8 characters</p>
-                        <p class="password_checklist_item" id="password_number_inclusion">Must include at least 1 number</p>
-                        <p class="password_checklist_item" id="password_special_character">Must include a special character (!, #, %, &, @, $, etc)</p>
-                        <p class="password_checklist_item" id="password_uppercase">At least 1 letter must be uppercase</p>
+                        <p class="password_checklist_item" id="password_character_size" data-status="invalid">Must have at least 8 characters</p>
+                        <p class="password_checklist_item" id="password_number_inclusion" data-status="invalid">Must include at least 1 number</p>
+                        <p class="password_checklist_item" id="password_special_character" data-status="invalid">Must include a special character (!, #, %, &, @, $, etc)</p>
+                        <p class="password_checklist_item" id="password_uppercase" data-status="invalid">At least 1 letter must be uppercase</p>
                     </div>
                 </div>
                 <div class="form_input">
