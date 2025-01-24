@@ -43,6 +43,8 @@ function OpenPasswordContainer(passwordRequirements, passwordInput){
 function PasswordCheck(passwordInput){
     let characterSize = document.getElementById("password_character_size")
     let numberCheck = document.getElementById("password_number_inclusion")
+    let specialCharacterCheck = document.getElementById("password_special_character")
+    let upperCaseCheck = document.getElementById("password_uppercase")
 
     passwordInput.addEventListener('keyup', function(){
         
@@ -60,6 +62,24 @@ function PasswordCheck(passwordInput){
         }
         else{
             numberCheck.setAttribute('data-status','invalid')
+        }
+
+        let specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+        if(passwordInput.value.match(specialCharacters)){
+            specialCharacterCheck.setAttribute("data-status", "valid")
+        }
+        else{
+            specialCharacterCheck.setAttribute("data-status", "invalid")
+        }
+
+        let upperCase = /[A-Z]/g;
+
+        if(passwordInput.value.match(upperCase)){
+            upperCaseCheck.setAttribute('data-status', 'valid')
+        }
+        else{
+            upperCaseCheck.setAttribute('data-status', 'invalid')
         }
     })
 }
