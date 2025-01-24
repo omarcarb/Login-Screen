@@ -67,6 +67,7 @@ section{
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    padding: 0% 5%;
 }
 label{
     font-weight: 600;
@@ -205,6 +206,9 @@ button.primary_button:active{
     flex-direction: column;
     gap: 8px;
 }
+#password_form{
+    position: relative;
+}
 .password_extras_container{
     display: flex;
     justify-content: space-between;
@@ -244,12 +248,17 @@ button.primary_button:active{
     cursor: pointer;
 }
 .password_validation_container{
+    position: absolute;
+    z-index: 100;
+    top: 110%;
     padding: 1.5rem 1rem;
     display: none;
     flex-direction: column;
     gap: .75rem;
+    width: calc(100% - 2rem);
     background-color: var(--neutral-100);
     border-radius: .5rem;
+    box-shadow: 2px 2px 4px var(--neutral-400);
     & .password_checklist_item{
         font-size: .85rem;
         color: var(--neutral-700);
