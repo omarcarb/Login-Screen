@@ -1,14 +1,22 @@
+let coverHeader = ["Good to See You Again!", "Be Part of Something Bigger."]
+let coverSubheading = ["Log in to reconnect and dive back into what you love.","Join to unlock exclusive features and connect with a community that gets you."]
+
 document.addEventListener('DOMContentLoaded', function () {
     const coverScreen = document.querySelector('.cover');
     const passwordRequirements = document.querySelector(".password_validation_container")
     const passwordInput = document.querySelector(".pword_input")
+    let headerCover = document.querySelector(".cover_header")
+    let subheaderCover = document.querySelector(".cover_subheader")
 
-    CheckCover(coverScreen);
+    headerCover.innerHTML = coverHeader[0]
+    subheaderCover.innerHTML = coverSubheading[0]
+
+    CheckCover(coverScreen, headerCover, subheaderCover);
     OpenPasswordContainer(passwordRequirements, passwordInput)
     PasswordCheck(passwordInput);
 });
 
-function CheckCover(coverScreen){
+function CheckCover(coverScreen, headerCover, subheaderCover){
     let buttonCover = document.querySelectorAll(".swap_screens")
 
     if (coverScreen) {
@@ -18,9 +26,13 @@ function CheckCover(coverScreen){
                 
                 if(coverSide == "login"){
                     coverScreen.setAttribute("data-covered", "login_covered")
+                    headerCover.innerHTML = coverHeader[1]
+                    subheaderCover.innerHTML = coverSubheading[1]
                 }
                 else if(coverSide == "account"){
                     coverScreen.setAttribute("data-covered", "create_covered")
+                    headerCover.innerHTML = coverHeader[0]
+                    subheaderCover.innerHTML = coverSubheading[0]
                 }
             })
         })
