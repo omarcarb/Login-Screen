@@ -26,13 +26,20 @@ function CheckCover(coverScreen, headerCover, subheaderCover){
                 
                 if(coverSide == "login"){
                     coverScreen.setAttribute("data-covered", "login_covered")
-                    headerCover.innerHTML = coverHeader[1]
-                    subheaderCover.innerHTML = coverSubheading[1]
+                    setTimeout(function(){
+                        headerCover.innerHTML = coverHeader[1]
+                        subheaderCover.innerHTML = coverSubheading[1]
+                        console.log("the title has changed")
+                    }, 1000)
+                    
                 }
                 else if(coverSide == "account"){
                     coverScreen.setAttribute("data-covered", "create_covered")
-                    headerCover.innerHTML = coverHeader[0]
-                    subheaderCover.innerHTML = coverSubheading[0]
+                    setTimeout(function(){
+                        headerCover.innerHTML = coverHeader[0]
+                        subheaderCover.innerHTML = coverSubheading[0]
+                        console.log("the title has changed")
+                    },1000)
                 }
             })
         })
