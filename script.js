@@ -47,9 +47,9 @@ function PasswordCheck(passwordInput){
     let upperCaseCheck = document.getElementById("password_uppercase")
 
     passwordInput.addEventListener('keyup', function(){
-        
+
         if(passwordInput.value.length >= 8){
-            characterSize.setAttribute("data-status", "valid")
+            characterSize.setAttribute("data-status","valid")
         }
         else if(passwordInput.value.length < 8){
             characterSize.setAttribute("data-status","invalid")

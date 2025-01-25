@@ -80,10 +80,11 @@ input{
     border: none;
     outline: none;
     background-color: var(--neutral-100);
-    padding: 0rem 1rem;
+    padding: 0rem 1rem 0rem 3rem;
     font-size: .75rem;
     font-weight: 500;
     position: relative;
+    width: calc(100% - 4rem);
 }
 input::placeholder{
     font-weight: 400;
@@ -122,7 +123,7 @@ input[type="checkbox"]:checked::after {
     height: 10px; 
     border: solid white;
     border-width: 0 2px 2px 0;
-  }
+}
 button{
     padding: 1rem 0rem;
     font-size: 1rem;
@@ -145,6 +146,17 @@ button.primary_button:hover{
 button.primary_button:active{
     background-color: var(--primary-700);
     box-shadow: 0px 0px 0px var(--neutral-400);
+}
+.icon{
+    stroke: var(--primary-700);
+    max-width: 20px;
+    max-height: 20px;
+}
+.input_icon{
+    position: absolute;
+    z-index: 10;
+    left: 16px;
+    top: 12px;
 }
 .cover{
     height: 100%;
@@ -189,6 +201,10 @@ button.primary_button:active{
     align-items: center;
     gap: .5rem;
     padding: 1rem 0rem;
+}
+.input_container{
+    position: relative;
+    width: 100%;
 }
 .form_container{
     display: flex;

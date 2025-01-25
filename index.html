@@ -21,11 +21,24 @@
             <div class="form_input_container">
                 <div class="form_input">
                     <label for="user_id">Email or Username</label>
-                    <input name="user_id" type="text" placeholder="Enter Your Email or Username" required>
+                    <div class="input_container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon input_icon">
+                            <circle cx="12" cy="6" r="4" stroke-width="1.5"></circle> 
+                            <ellipse cx="12" cy="17" rx="7" ry="4" stroke-width="1.5"></ellipse>
+                        </svg>
+                        <input name="user_id" type="text" placeholder="Enter Your Email or Username" required>
+                    </div>
                 </div>
                 <div class="form_input">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Enter Your Password" required>
+                    <div class="input_container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon input_icon">
+                            <path d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z" stroke-width="1.5"></path> 
+                            <path d="M12 14V18"  stroke-width="1.5" stroke-linecap="round"></path> 
+                            <path d="M6 10V8C6 4.68629 8.68629 2 12 2C15.3137 2 18 4.68629 18 8V10"  stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                        <input type="password" placeholder="Enter Your Password" required>
+                    </div>
                     <div class="password_extras_container">
                         <div class="extra_remember">
                             <input type="checkbox" name="remember_check">
@@ -64,11 +77,24 @@
             <div class="form_input_container">
                 <div class="form_input">
                     <label for="user_id">Email or Username</label>
-                    <input name="user_id" type="text" placeholder="Enter Your Email or Username" required>
+                    <div class="input_container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon input_icon">
+                            <circle cx="12" cy="6" r="4" stroke-width="1.5"></circle> 
+                            <ellipse cx="12" cy="17" rx="7" ry="4" stroke-width="1.5"></ellipse>
+                        </svg>
+                        <input name="user_id" type="text" placeholder="Enter Your Email or Username" required>
+                    </div>
                 </div>
                 <div class="form_input" id="password_form">
                     <label for="password">Password</label>
-                    <input name="password" class="pword_input" type="password" placeholder="Enter Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    <div class="input_container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon input_icon">
+                            <path d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z" stroke-width="1.5"></path> 
+                            <path d="M12 14V18"  stroke-width="1.5" stroke-linecap="round"></path> 
+                            <path d="M6 10V8C6 4.68629 8.68629 2 12 2C15.3137 2 18 4.68629 18 8V10"  stroke-width="1.5" stroke-linecap="round"></path>
+                        </svg>
+                        <input name="password" class="pword_input" type="password" placeholder="Enter Your Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                    </div>
                     <div class="password_validation_container" data-requierments="visible">
                         <p class="password_checklist_item" id="password_character_size" data-status="invalid">Must have at least 8 characters</p>
                         <p class="password_checklist_item" id="password_number_inclusion" data-status="invalid">Must include at least 1 number</p>
@@ -78,7 +104,14 @@
                 </div>
                 <div class="form_input">
                     <label for="password">Retype Password</label>
-                    <input type="password" placeholder="Retype Your Password" required>
+                    <div class="input_container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon input_icon">
+                            <path d="M2 16C2 13.1716 2 11.7574 2.87868 10.8787C3.75736 10 5.17157 10 8 10H16C18.8284 10 20.2426 10 21.1213 10.8787C22 11.7574 22 13.1716 22 16C22 18.8284 22 20.2426 21.1213 21.1213C20.2426 22 18.8284 22 16 22H8C5.17157 22 3.75736 22 2.87868 21.1213C2 20.2426 2 18.8284 2 16Z" stroke-width="1.5"></path> 
+                            <path d="M6 10V8C6 4.68629 8.68629 2 12 2C15.3137 2 18 4.68629 18 8V10"  stroke-width="1.5" stroke-linecap="round"></path> 
+                            <path d="M8 16H8.009M11.991 16H12M15.991 16H16"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <input type="password" placeholder="Retype Your Password" required>
+                    </div>
                 </div>
             </div>
             <button class="primary_button">Create Account</button>
