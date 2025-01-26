@@ -23,22 +23,25 @@ function CheckCover(coverScreen, headerCover, subheaderCover){
         buttonCover.forEach(function(item){
             item.addEventListener("click", function(){
                 let coverSide = item.getAttribute("data-side")
+                let animatiedText = document.querySelector(".text_container")
                 
                 if(coverSide == "login"){
                     coverScreen.setAttribute("data-covered", "login_covered")
+                    animatiedText.setAttribute('data-animation', 'disappear')
                     setTimeout(function(){
                         headerCover.innerHTML = coverHeader[1]
                         subheaderCover.innerHTML = coverSubheading[1]
-                        console.log("the title has changed")
+                        animatiedText.setAttribute('data-animation', "move-left")
                     }, 1000)
                     
                 }
                 else if(coverSide == "account"){
                     coverScreen.setAttribute("data-covered", "create_covered")
+                    animatiedText.setAttribute('data-animation', 'disappear')
                     setTimeout(function(){
                         headerCover.innerHTML = coverHeader[0]
                         subheaderCover.innerHTML = coverSubheading[0]
-                        console.log("the title has changed")
+                        animatiedText.setAttribute('data-animation', "move-right")
                     },1000)
                 }
             })
@@ -102,5 +105,3 @@ function PasswordCheck(passwordInput){
         }
     })
 }
-
-console.log(screen.width)
