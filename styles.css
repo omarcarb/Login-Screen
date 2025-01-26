@@ -173,6 +173,7 @@ button.primary_button:active{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 .cover[data-covered="login_covered"]{
     transform: translateX(0%);
