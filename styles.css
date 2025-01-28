@@ -382,6 +382,7 @@ button.primary_button:active{
     padding: 1rem 2rem;
     width: 64px;
     border-radius: 8px;
+    max-height: 54px;
 }
 .social_icons{
     width: 48px;
