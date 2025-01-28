@@ -1,7 +1,7 @@
 let coverHeader = ["Good to See You Again!", "Be Part of Something Bigger."]
 let coverSubheading = ["Log in to reconnect and dive back into what you love.","Join to unlock exclusive features and connect with a community that gets you."]
 
-let circleScatter = '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="#025449"/></svg>'
+let circleScatter = '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="myGradient" cx="0.6" cy="0.4" r="0.5" fx="0.6" fy="0.4"><stop offset="0%" stop-color="#12B0AC" /><stop offset="100%" stop-color="#068278" /></radialGradient></defs><circle cx="26" cy="26" r="26" fill="url(#myGradient)"/></svg>'
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -115,7 +115,6 @@ function ScatterCircles(circles, coverScreen){
     let minSize = 20;
 
     while(maxCircles < 30){
-        console.log(maxCircles)
         const circleContainer = document.createElement('div');
 
         circleContainer.innerHTML = circles;
