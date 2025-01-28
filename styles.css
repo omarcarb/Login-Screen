@@ -216,6 +216,10 @@ button.primary_button:active{
     font-size: 1.5rem;
     font-weight: 500;
 }
+.text_container{
+    position: relative;
+    z-index: 10000;
+}
 .text_container[data-animation="disappear"]{
     animation: shrink_text 700ms ease-out forwards;
 }
@@ -254,6 +258,10 @@ button.primary_button:active{
         transform: scale(1) translateX(0%);
         opacity: 1;
     }
+}
+#circles{
+    position: absolute;
+    z-index: 10000;
 }
 .header_container{
     width: 100%;
