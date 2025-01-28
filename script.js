@@ -1,7 +1,7 @@
 let coverHeader = ["Good to See You Again!", "Be Part of Something Bigger."]
 let coverSubheading = ["Log in to reconnect and dive back into what you love.","Join to unlock exclusive features and connect with a community that gets you."]
 
-let circleScatter = '<svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="26" cy="26.5" rx="26" ry="26.5" fill="#12B0AC"/></svg>'
+let circleScatter = '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="#025449"/></svg>'
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -111,9 +111,10 @@ function PasswordCheck(passwordInput){
 }
 
 function ScatterCircles(circles, coverScreen){
-    let maxCircles = 0;
+    let maxCircles = 1;
+    let minSize = 20;
 
-    while(maxCircles < 20){
+    while(maxCircles < 30){
         console.log(maxCircles)
         const circleContainer = document.createElement('div');
 
@@ -123,7 +124,19 @@ function ScatterCircles(circles, coverScreen){
         circleContainer.style.position = 'absolute'
         circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
         circleContainer.style.top = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
-        
+
+        const svgElement = circleContainer.querySelector('svg');
+        if (svgElement) {
+            let newSize = maxCircles * Math.floor((Math.random() * 10) + 1);
+
+            if (newSize < minSize) {
+                newSize = minSize;
+            }
+
+            svgElement.setAttribute('width', `${newSize}px`);
+            svgElement.setAttribute('height', `${newSize}px`);
+        }
+
         coverScreen.appendChild(circleContainer);
         maxCircles++;
     }
