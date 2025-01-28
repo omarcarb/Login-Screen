@@ -112,7 +112,7 @@ function PasswordCheck(passwordInput){
 
 function ScatterCircles(circles, coverScreen){
     let maxCircles = 1;
-    let minSize = 20;
+    let minSize = 50;
 
     while(maxCircles < 30){
         const circleContainer = document.createElement('div');

@@ -68,6 +68,9 @@ section{
     justify-content: center;
     gap: 2rem;
     padding: 0% 5%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;
 }
 label{
     font-weight: 600;
@@ -389,6 +392,11 @@ button.primary_button:active{
     height: 48px;
 }
 
-@media (min-width <=1200) and (max-width >= 1400) {
-    
+@media only screen and (max-width: 480px) {
+    .cover{
+        display: none;
+    }
+    section{
+        width: 100dvw;
+    }
 }
