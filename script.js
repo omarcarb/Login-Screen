@@ -76,14 +76,13 @@ function MoveSections(sections){
                 let loginSide = document.querySelector(".login_screen")
                 let accountside = document.querySelector(".create_account_screen")
                 
-                if(coverSide == "login"){
-                    loginSide.style.transform = 'translateX(-100%)'
+                if(coverSide == "login"){                
+                    loginSide.style.display = "none"
                     accountside.style.display = 'flex'
-                    accountside.style.transform = "translateX(-100%)"
                 }
                 else if(coverSide == "account"){
-                    loginSide.style.transform = 'translateX(0%)'
-                    accountside.style.cssText = 'display: none; translateX(0%)'
+                    loginSide.style.display = "flex"
+                    accountside.style.display = 'none'
                 }
             })
         })
