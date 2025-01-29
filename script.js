@@ -10,11 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.querySelector(".pword_input")
     let headerCover = document.querySelector(".cover_header")
     let subheaderCover = document.querySelector(".cover_subheader")
+    let sections = document.querySelectorAll("section")
+    let screenSize = window.innerWidth;
+
+    console.log(screenSize)
 
     headerCover.innerHTML = coverHeader[0]
     subheaderCover.innerHTML = coverSubheading[0]
 
-    CheckCover(coverScreen, headerCover, subheaderCover);
+    if(screenSize > 786){
+        CheckCover(coverScreen, headerCover, subheaderCover);
+    }
+    else{
+        MoveSections(sections)
+    }
+    
     OpenPasswordContainer(passwordRequirements, passwordInput)
     PasswordCheck(passwordInput);
     ScatterCircles(circleScatter, coverScreen);
@@ -53,6 +63,32 @@ function CheckCover(coverScreen, headerCover, subheaderCover){
         
     } else {
         console.error("Element with class 'cover' not found.");
+    }
+}
+
+function MoveSections(sections){
+    let switchScreenButton = document.querySelectorAll('.swap_screens')
+
+    if (sections) {
+        switchScreenButton.forEach(function(item){
+            item.addEventListener("click", function(){
+                let coverSide = item.getAttribute("data-side")
+                let loginSide = document.querySelector(".login_screen")
+                let accountside = document.querySelector(".create_account_screen")
+                
+                if(coverSide == "login"){
+                    loginSide.style.transform = 'translateX(-100%)'
+                    accountside.style.display = 'flex'
+                    accountside.style.transform = "translateX(-100%)"
+                }
+                else if(coverSide == "account"){
+                    loginSide.style.transform = 'translateX(0%)'
+                    accountside.style.cssText = 'display: none; translateX(0%)'
+                }
+            })
+        })
+    } else{
+        console.log("element is invalid")
     }
 }
 

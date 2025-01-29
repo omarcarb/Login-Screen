@@ -398,5 +398,10 @@ button.primary_button:active{
     }
     section{
         width: 100dvw;
+        height: auto;
+        gap: 1rem;
+    }
+    .create_account_screen{
+        display: none;
     }
 }
