@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     PasswordCheck(passwordInput);
     ScatterCircles(circleScatter, coverScreen);
 });
-
 function CheckCover(coverScreen, headerCover, subheaderCover){
     let buttonCover = document.querySelectorAll(".swap_screens")
 
@@ -60,22 +59,18 @@ function CheckCover(coverScreen, headerCover, subheaderCover){
                 }
             })
         })
-        
     } else {
         console.error("Element with class 'cover' not found.");
     }
 }
-
 function MoveSections(sections){
     let switchScreenButton = document.querySelectorAll('.swap_screens')
-
     if (sections) {
         switchScreenButton.forEach(function(item){
             item.addEventListener("click", function(){
                 let coverSide = item.getAttribute("data-side")
                 let loginSide = document.querySelector(".login_screen")
                 let accountside = document.querySelector(".create_account_screen")
-                
                 if(coverSide == "login"){                
                     loginSide.style.display = "none"
                     accountside.style.display = 'flex'
@@ -90,9 +85,7 @@ function MoveSections(sections){
         console.log("element is invalid")
     }
 }
-
 function OpenPasswordContainer(passwordRequirements, passwordInput){
-
     passwordInput.addEventListener('focus', function(){
         passwordRequirements.style.display = "flex"
     })
@@ -100,42 +93,33 @@ function OpenPasswordContainer(passwordRequirements, passwordInput){
         passwordRequirements.style.display = "none"
     })
 }
-
 function PasswordCheck(passwordInput){
     let characterSize = document.getElementById("password_character_size")
     let numberCheck = document.getElementById("password_number_inclusion")
     let specialCharacterCheck = document.getElementById("password_special_character")
     let upperCaseCheck = document.getElementById("password_uppercase")
-
     passwordInput.addEventListener('keyup', function(){
-
+        let numbers = /[0-9]/g;
+        let specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        let upperCase = /[A-Z]/g;
         if(passwordInput.value.length >= 8){
             characterSize.setAttribute("data-status","valid")
         }
         else if(passwordInput.value.length < 8){
             characterSize.setAttribute("data-status","invalid")
         }
-
-        let numbers = /[0-9]/g;
-
         if(passwordInput.value.match(numbers)){
             numberCheck.setAttribute("data-status","valid")
         }
         else{
             numberCheck.setAttribute('data-status','invalid')
         }
-
-        let specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-
         if(passwordInput.value.match(specialCharacters)){
             specialCharacterCheck.setAttribute("data-status", "valid")
         }
         else{
             specialCharacterCheck.setAttribute("data-status", "invalid")
         }
-
-        let upperCase = /[A-Z]/g;
-
         if(passwordInput.value.match(upperCase)){
             upperCaseCheck.setAttribute('data-status', 'valid')
         }
@@ -144,32 +128,23 @@ function PasswordCheck(passwordInput){
         }
     })
 }
-
 function ScatterCircles(circles, coverScreen){
     let maxCircles = 1;
     let minSize = 50;
-
     while(maxCircles < 30){
         const circleContainer = document.createElement('div');
-
         circleContainer.innerHTML = circles;
         circleContainer.setAttribute('class', 'circle_item')
         circleContainer.setAttribute('id', `circle-${maxCircles}`)
-
         circleContainer.style.position = 'absolute'
         circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
         circleContainer.style.top = "100%"
-
         circleContainer.style.animationDelay = `${maxCircles * 200}ms`
-
-        
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
         const randomEndY = randomMidY + Math.floor(Math.random() * 50 + 100)
         console.log(randomEndY)
-
         circleContainer.style.setProperty('--endY', `${randomEndY}px`);  
         circleContainer.style.setProperty('--midY', `${randomMidY}px`)      
-
         const svgElement = circleContainer.querySelector('svg');
         if (svgElement) {
             let newSize = maxCircles * Math.floor((Math.random() * 10) + 1);
@@ -177,11 +152,9 @@ function ScatterCircles(circles, coverScreen){
             if (newSize < minSize) {
                 newSize = minSize;
             }
-
             svgElement.setAttribute('width', `${newSize}px`);
             svgElement.setAttribute('height', `${newSize}px`);
         }
-
         coverScreen.appendChild(circleContainer);
         maxCircles++;
     }
