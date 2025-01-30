@@ -266,6 +266,22 @@ button.primary_button:active{
     position: absolute;
     z-index: 10000;
 }
+.circle_item{
+    animation: float 4000ms infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes float {
+    0%{
+        transform: translateX(0) translateY(0) scale(0);
+
+    }
+    50%{
+        transform: translateX(40px) translateY(var(--midY)) scale(1.25);
+
+    }
+    100%{
+        transform: translate(0) translateY(var(--endY)) scale(0);
+    }
+}
 .header_container{
     width: 100%;
     display: flex;

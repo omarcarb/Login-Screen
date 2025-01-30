@@ -153,11 +153,22 @@ function ScatterCircles(circles, coverScreen){
         const circleContainer = document.createElement('div');
 
         circleContainer.innerHTML = circles;
-        circleContainer.setAttribute('id', 'circle-${maxCircles}')
+        circleContainer.setAttribute('class', 'circle_item')
+        circleContainer.setAttribute('id', `circle-${maxCircles}`)
 
         circleContainer.style.position = 'absolute'
         circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
-        circleContainer.style.top = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
+        circleContainer.style.top = "100%"
+
+        circleContainer.style.animationDelay = `${maxCircles * 200}ms`
+
+        
+        const randomMidY = -Math.floor(Math.random() * 300 + 500);
+        const randomEndY = -randomMidY + Math.floor(Math.random() * 100 + 150)
+        console.log(randomEndY)
+
+        circleContainer.style.setProperty('--endY', `${randomEndY}px`);  
+        circleContainer.style.setProperty('--midY', `${randomMidY}px`)      
 
         const svgElement = circleContainer.querySelector('svg');
         if (svgElement) {
