@@ -403,8 +403,29 @@ button.primary_button:active{
         width: 100dvw;
         height: auto;
         gap: 1rem;
+        padding: 2rem 5%;
+    }
+    .logo{
+        width: 100%;
     }
     .create_account_screen{
         display: none;
+    }
+    .social_media_group{
+        gap: .5rem;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .social_media_button{
+        padding: 1rem;
+        width: 48px;
+        max-height: none;
+        & .social_icons{
+            width: 36px;
+            height: 36px;
+        }
+        & .social_icon_text{
+            font-size: .75rem;
+        }
     }
 }
