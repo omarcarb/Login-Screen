@@ -279,7 +279,7 @@ button.primary_button:active{
 
     }
     100%{
-        transform: translate(0) translateY(var(--endY)) scale(0);
+        transform: translateY(var(--endY)) scale(0);
     }
 }
 .header_container{

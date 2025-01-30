@@ -164,7 +164,7 @@ function ScatterCircles(circles, coverScreen){
 
         
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
-        const randomEndY = randomMidY + Math.floor(Math.random() * -50 - 100)
+        const randomEndY = randomMidY + Math.floor(Math.random() * 50 + 100)
         console.log(randomEndY)
 
         circleContainer.style.setProperty('--endY', `${randomEndY}px`);  
