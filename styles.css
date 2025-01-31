@@ -274,8 +274,12 @@ button.primary_button:active{
         transform: translateX(0) translateY(0) scale(0);
 
     }
-    50%{
+    45%{
         transform: translateX(40px) translateY(var(--midY)) scale(1.25);
+
+    }
+    65%{
+        transform: translateX(40px) translateY(calc(var(--midY) - 100px)) scale(1.25);
 
     }
     100%{

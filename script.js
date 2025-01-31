@@ -132,20 +132,13 @@ function ScatterCircles(circles, coverScreen){
     let maxCircles = 1;
     let minSize = 50;
     while(maxCircles < 30){
-        const circleContainer = document.createElement('div');
-        circleContainer.innerHTML = circles;
-        circleContainer.setAttribute('class', 'circle_item')
-        circleContainer.setAttribute('id', `circle-${maxCircles}`)
-        circleContainer.style.position = 'absolute'
-        circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
-        circleContainer.style.top = "100%"
-        circleContainer.style.animationDelay = `${maxCircles * 200}ms`
+        let circle = CreateCircles(circles,maxCircles)
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
         const randomEndY = randomMidY + Math.floor(Math.random() * 50 + 100)
         console.log(randomEndY)
-        circleContainer.style.setProperty('--endY', `${randomEndY}px`);  
-        circleContainer.style.setProperty('--midY', `${randomMidY}px`)      
-        const svgElement = circleContainer.querySelector('svg');
+        circle.style.setProperty('--endY', `${randomEndY}px`);  
+        circle.style.setProperty('--midY', `${randomMidY}px`)      
+        const svgElement = CreateCircles().querySelector('svg');
         if (svgElement) {
             let newSize = maxCircles * Math.floor((Math.random() * 10) + 1);
 
@@ -155,7 +148,19 @@ function ScatterCircles(circles, coverScreen){
             svgElement.setAttribute('width', `${newSize}px`);
             svgElement.setAttribute('height', `${newSize}px`);
         }
-        coverScreen.appendChild(circleContainer);
+        coverScreen.appendChild(circle);
         maxCircles++;
     }
+}
+function CreateCircles(circles, maxCircles){
+    const circleContainer = document.createElement('div');
+    circleContainer.innerHTML = circles;
+    circleContainer.setAttribute('class', 'circle_item')
+    circleContainer.setAttribute('id', `circle-${maxCircles}`)
+    circleContainer.style.position = 'absolute'
+    circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
+    circleContainer.style.top = "100%"
+    circleContainer.style.animationDelay = `${maxCircles * 200}ms`
+
+    return circleContainer;
 }
