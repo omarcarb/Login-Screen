@@ -5,6 +5,7 @@ let coverSubheading = ["Log in to reconnect and dive back into what you love.","
 let circleScatter = '<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_f_887_2299)"><circle cx="30" cy="30" r="26" fill="url(#paint0_radial_887_2299)"/><circle cx="30" cy="30" r="26" fill="url(#paint1_radial_887_2299)" fill-opacity="0.5"/><circle cx="30" cy="30" r="26.25" stroke="#FCFCFC" stroke-opacity="0.4" stroke-width="0.5"/></g><defs><filter id="filter0_f_887_2299" x="0.5" y="0.5" width="59" height="59" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="1.5" result="effect1_foregroundBlur_887_2299"/></filter><radialGradient id="paint0_radial_887_2299" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 41) rotate(-137.726) scale(22.2991)"><stop offset="0.025" stop-color="#91D3DB" stop-opacity="0.73"/><stop offset="0.18" stop-color="#CC9CDF" stop-opacity="0.67525"/><stop offset="0.335" stop-color="#FBA5DF" stop-opacity="0.6351"/><stop offset="1" stop-color="#CF9494" stop-opacity="0"/></radialGradient><radialGradient id="paint1_radial_887_2299" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(16.5 9.5) rotate(57.9946) scale(28.3019)"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs></svg>'
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const coverScreen = document.querySelector('.cover');
     const passwordRequirements = document.querySelector(".password_validation_container")
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     OpenPasswordContainer(passwordRequirements, passwordInput)
     PasswordCheck(passwordInput);
-    ScatterCircles(circleScatter, coverScreen);
+    ScatterCircles(circleScatter,coverScreen)
 });
 function CheckCover(coverScreen, headerCover, subheaderCover){
     let buttonCover = document.querySelectorAll(".swap_screens")
@@ -150,6 +151,7 @@ function ScatterCircles(circles, coverScreen){
             svgElement.setAttribute('height', `${newSize}px`);
         }
         coverScreen.appendChild(circle);
+        console.log(maxCircles)
         maxCircles++;
     }
 }
@@ -158,12 +160,13 @@ function CreateCircles(circles, maxCircles){
     circleContainer.innerHTML = circles;
     circleContainer.setAttribute('class', 'circle_item')
     circleContainer.setAttribute('id', `circle-${maxCircles}`)
+    let maxRotation = Math.floor(Math.random()* ( 18 - 9 ) + 9)
     Object.assign(circleContainer.style, {
         position: 'absolute',
-        left: `${maxCircles * (Math.random() * 10 + 1)}%`, 
-        top: '100%',
+        left: `-10%`, 
+        top: '0%',
         animationDelay: `${maxCircles * 200}ms`,
-        rotate: `${maxCircles * 10}deg`
+        rotate: `${ maxRotation * 10}deg`
     });
 
     return circleContainer;

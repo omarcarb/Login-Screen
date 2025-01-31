@@ -168,7 +168,7 @@ button.primary_button:active{
     height: 100vh;
     width: 50%;
     position: absolute;
-    background-color: var(--primary-700);
+    background-color: var(--primary-800);
     z-index: 100;
     transform: translateX(100%);
     animation-play-state: paused;
@@ -267,17 +267,18 @@ button.primary_button:active{
     z-index: 10000;
 }
 .circle_item{
-    animation: float 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform: translateX(0) translateY(0) scale(0);
+    animation: float 5s linear infinite;
 }
 @keyframes float {
-    0% {
-        transform: translateX(0) translateY(0) scale(0);
+    0%{
+        transform: scale(0) translateX(0) translateY(0);
     }
     55% {
-        transform: translateY(var(--midY)) scale(1.25);
+        transform: scale(1) translateY(var(--midY)) ;
     }
     75% {
-        transform: translateY(calc((var(--midY) + var(--endY)) / 2)) scale(1.2);
+        transform: translateY(calc((var(--midY) + var(--endY)) / 2));
     }
     95% {
         transform: translateY(calc(var(--endY) + 25px)) scale(1.1);
