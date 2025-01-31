@@ -1,7 +1,8 @@
+
 let coverHeader = ["Good to See You Again!", "Be Part of Something Bigger."]
 let coverSubheading = ["Log in to reconnect and dive back into what you love.","Join to unlock exclusive features and connect with a community that gets you."]
 
-let circleScatter = '<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="myGradient" cx="0.6" cy="0.4" r="0.5" fx="0.6" fy="0.4"><stop offset="0%" stop-color="#12B0AC" /><stop offset="100%" stop-color="#068278" /></radialGradient></defs><circle cx="26" cy="26" r="26" fill="url(#myGradient)"/></svg>'
+let circleScatter = '<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_f_887_2299)"><circle cx="30" cy="30" r="26" fill="url(#paint0_radial_887_2299)"/><circle cx="30" cy="30" r="26" fill="url(#paint1_radial_887_2299)" fill-opacity="0.5"/><circle cx="30" cy="30" r="26.25" stroke="#FCFCFC" stroke-opacity="0.4" stroke-width="0.5"/></g><defs><filter id="filter0_f_887_2299" x="0.5" y="0.5" width="59" height="59" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur stdDeviation="1.5" result="effect1_foregroundBlur_887_2299"/></filter><radialGradient id="paint0_radial_887_2299" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 41) rotate(-137.726) scale(22.2991)"><stop offset="0.025" stop-color="#91D3DB" stop-opacity="0.73"/><stop offset="0.18" stop-color="#CC9CDF" stop-opacity="0.67525"/><stop offset="0.335" stop-color="#FBA5DF" stop-opacity="0.6351"/><stop offset="1" stop-color="#CF9494" stop-opacity="0"/></radialGradient><radialGradient id="paint1_radial_887_2299" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(16.5 9.5) rotate(57.9946) scale(28.3019)"><stop stop-color="white"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient></defs></svg>'
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -134,7 +135,7 @@ function ScatterCircles(circles, coverScreen){
     while(maxCircles < 30){
         let circle = CreateCircles(circles,maxCircles)
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
-        const randomEndY = randomMidY + Math.floor(Math.random() * 50 + 100)
+        const randomEndY = randomMidY + -Math.floor(Math.random() * 50 + 100)
         console.log(randomEndY)
         circle.style.setProperty('--endY', `${randomEndY}px`);  
         circle.style.setProperty('--midY', `${randomMidY}px`)      
@@ -157,10 +158,13 @@ function CreateCircles(circles, maxCircles){
     circleContainer.innerHTML = circles;
     circleContainer.setAttribute('class', 'circle_item')
     circleContainer.setAttribute('id', `circle-${maxCircles}`)
-    circleContainer.style.position = 'absolute'
-    circleContainer.style.left = maxCircles * Math.floor((Math.random() * 10) + 1) + "%"
-    circleContainer.style.top = "100%"
-    circleContainer.style.animationDelay = `${maxCircles * 200}ms`
+    Object.assign(circleContainer.style, {
+        position: 'absolute',
+        left: `${maxCircles * (Math.random() * 10 + 1)}%`, 
+        top: '100%',
+        animationDelay: `${maxCircles * 200}ms`,
+        rotate: `${maxCircles * 10}deg`
+    });
 
     return circleContainer;
 }
