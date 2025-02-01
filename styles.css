@@ -444,7 +444,7 @@ button.primary_button:active{
         justify-content: space-between;
     }
     .social_media_button{
-        padding: 1rem;
+        padding: 1rem .5rem;
         width: 48px;
         max-height: none;
         & .social_icons{
@@ -452,7 +452,7 @@ button.primary_button:active{
             height: 36px;
         }
         & .social_icon_text{
-            font-size: .75rem;
+            font-size: .5rem;
         }
     }
 }

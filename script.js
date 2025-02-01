@@ -1,4 +1,5 @@
 
+
 let coverHeader = ["Good to See You Again!", "Be Part of Something Bigger."]
 let coverSubheading = ["Log in to reconnect and dive back into what you love.","Join to unlock exclusive features and connect with a community that gets you."]
 
@@ -104,30 +105,10 @@ function PasswordCheck(passwordInput){
         let numbers = /[0-9]/g;
         let specialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         let upperCase = /[A-Z]/g;
-        if(passwordInput.value.length >= 8){
-            characterSize.setAttribute("data-status","valid")
-        }
-        else if(passwordInput.value.length < 8){
-            characterSize.setAttribute("data-status","invalid")
-        }
-        if(passwordInput.value.match(numbers)){
-            numberCheck.setAttribute("data-status","valid")
-        }
-        else{
-            numberCheck.setAttribute('data-status','invalid')
-        }
-        if(passwordInput.value.match(specialCharacters)){
-            specialCharacterCheck.setAttribute("data-status", "valid")
-        }
-        else{
-            specialCharacterCheck.setAttribute("data-status", "invalid")
-        }
-        if(passwordInput.value.match(upperCase)){
-            upperCaseCheck.setAttribute('data-status', 'valid')
-        }
-        else{
-            upperCaseCheck.setAttribute('data-status', 'invalid')
-        }
+        CheckPasswordLength(passwordInput , characterSize);
+        CheckPasswordNumbers(passwordInput, numberCheck, numbers);
+        CheckSpecialCharacter(passwordInput, specialCharacterCheck, specialCharacters)
+        CheckUpperCharacter(passwordInput, upperCaseCheck, upperCase)
     })
 }
 function ScatterCircles(circles, coverScreen){
@@ -137,7 +118,7 @@ function ScatterCircles(circles, coverScreen){
         let circle = CreateCircles(circles,maxCircles)
         
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
-        const randomEndY = randomMidY + -Math.floor(Math.random() * 50 + 100)
+        const randomEndY = randomMidY + -Math.floor(Math.random() * 100 + 200)
         console.log(randomEndY)
         circle.style.setProperty('--endY', `${randomEndY}px`);  
         circle.style.setProperty('--midY', `${randomMidY}px`)      
@@ -164,11 +145,43 @@ function CreateCircles(circles, maxCircles){
     let maxRotation = Math.floor(Math.random()* ( 18 - 9 ) + 9)
     Object.assign(circleContainer.style, {
         position: 'absolute',
-        left: `-10%`, 
+        left: `-10%`,
         top: '0%',
         animationDelay: `${maxCircles * 200}ms`,
         rotate: `${ maxRotation * 10}deg`
     });
 
     return circleContainer;
+}
+function CheckPasswordLength(passwordInput, characterSize){
+    if(passwordInput.value.length >= 8){
+        characterSize.setAttribute("data-status","valid")
+    }
+    else if(passwordInput.value.length < 8){
+        characterSize.setAttribute("data-status","invalid")
+    }
+}
+function CheckPasswordNumbers(passwordInput, numberCheck, numbers){
+    if(passwordInput.value.match(numbers)){
+        numberCheck.setAttribute("data-status","valid")
+    }
+    else{
+        numberCheck.setAttribute('data-status','invalid')
+    }
+}
+function CheckSpecialCharacter(passwordInput, specialCharacterCheck, specialCharacters){
+    if(passwordInput.value.match(specialCharacters)){
+        specialCharacterCheck.setAttribute("data-status", "valid")
+    }
+    else{
+        specialCharacterCheck.setAttribute("data-status", "invalid")
+    }
+}
+function CheckUpperCharacter(passwordInput, upperCaseCheck, upperCase){
+    if(passwordInput.value.match(upperCase)){
+        upperCaseCheck.setAttribute('data-status', 'valid')
+    }
+    else{
+        upperCaseCheck.setAttribute('data-status', 'invalid')
+    }
 }
