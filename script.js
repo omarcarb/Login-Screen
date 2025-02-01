@@ -135,6 +135,7 @@ function ScatterCircles(circles, coverScreen){
     let minSize = 50;
     while(maxCircles < 30){
         let circle = CreateCircles(circles,maxCircles)
+        
         const randomMidY = -Math.floor(Math.random() * 300 + 500);
         const randomEndY = randomMidY + -Math.floor(Math.random() * 50 + 100)
         console.log(randomEndY)
@@ -151,6 +152,7 @@ function ScatterCircles(circles, coverScreen){
             svgElement.setAttribute('height', `${newSize}px`);
         }
         coverScreen.appendChild(circle);
+        circle.addEventListener('click', PopBubble(circle))
         console.log(maxCircles)
         maxCircles++;
     }
@@ -170,4 +172,8 @@ function CreateCircles(circles, maxCircles){
     });
 
     return circleContainer;
+}
+function PopBubble(circle){
+    let bubble = circle
+    bubble.remove();
 }
