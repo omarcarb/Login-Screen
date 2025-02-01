@@ -419,7 +419,7 @@ button.primary_button:active{
     height: 48px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 740px) {
     *{
         outline: 1px solid red;
     }
