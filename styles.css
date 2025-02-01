@@ -408,6 +408,12 @@ button.primary_button:active{
     border-radius: 8px;
     max-height: 54px;
 }
+.social_media_button:hover{
+    background-color: var(--primary-200);
+    & .social_icons{
+        transform: scale(1.075);
+    }
+}
 .social_icons{
     width: 48px;
     height: 48px;
